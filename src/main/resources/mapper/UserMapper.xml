@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hhugiser.community.mapper.UserMapper">
+
+    <resultMap id="BaseResultMap" type="com.hhugiser.community.model.User">
+        <result column="id" jdbcType="BIGINT" property="id" />
+        <result column="account_id" jdbcType="VARCHAR" property="accountId" />
+        <result column="name" jdbcType="VARCHAR" property="name" />
+        <result column="token" jdbcType="VARCHAR" property="token" />
+        <result column="gmt_create" jdbcType="BIGINT" property="gmtCreate" />
+        <result column="gmt_modified" jdbcType="BIGINT" property="gmtModified" />
+    </resultMap>
+
+    <insert id="insert" parameterType="com.hhugiser.community.model.User">
+        insert into user (account_id,name,token,gmt_create,gmt_modified) values (#{accountId},#{name},#{token},#{gmtCreate},#{gmtModified})
+    </insert>
+
+
+</mapper>
